@@ -19,7 +19,7 @@ public class App {
         cliente.imprimirExtrato();
 
         // Utilizando o método geral de transferir, para transferir da conta corrente do cliente 1 para a conta poupança do cliente 2
-        cliente.getCc().transferir(1, cliente2.getCp());
+        cliente.getCc().transferir(2, cliente2.getCp());
 
         // Imprimir o extrato das duas contas
         cliente.imprimirExtrato();

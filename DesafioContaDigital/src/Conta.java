@@ -22,8 +22,12 @@ public class Conta {
     }
 
     public void transferir(double valor, Conta contaDestino) {
-        this.sacar(valor);
-        contaDestino.depositar(valor);
+        if(valor <= this.getSaldo()){
+            this.sacar(valor);
+            contaDestino.depositar(valor);
+        }else{
+            System.out.println("Saldo insuficiente");
+        }
     }
 
     public void imprimirExtrato() {

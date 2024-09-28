@@ -35,13 +35,22 @@ public class Cliente {
     }
 
     public void aplicarPoupanca(double valor) {
-        this.cc.sacar(valor);
-        this.cp.depositar(valor);
+        if(valor <= this.cc.getSaldo()){
+            this.cc.sacar(valor);
+            this.cp.depositar(valor);
+        }else{
+            System.out.println("Saldo insuficiente");
+        }
+        
     }
 
     public void resgatarPoupanca(double valor) {
+        if(valor <= this.cp.getSaldo()){
         this.cp.sacar(valor);
         this.cc.depositar(valor);
+        }else{
+            System.out.println("Saldo insuficiente");
+        }
     }
 
     public void imprimirExtrato(){
